@@ -1,0 +1,5 @@
+{
+    "nunitTestRunner.projectsPatterns": [
+        "**/bin/**/*.Test.dll"
+    ]
+}
