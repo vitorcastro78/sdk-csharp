@@ -62,7 +62,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the invoice.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum FulfillmentStateEnum
         {
             /// <summary>
             /// Enum Accepted for value: accepted
@@ -101,7 +101,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the invoice.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public FulfillmentStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Fulfillment" /> class.
         /// </summary>
@@ -120,7 +120,7 @@ namespace Zuora.Model
         /// <param name="externalId">An external identifier for the fulfillment..</param>
         /// <param name="revenue">revenue.</param>
         /// <param name="location">The fulfillment location of the fulfillment..</param>
-        public Fulfillment(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string orderLineItemId = default(string), string fulfillmentNumber = default(string), DateTime fulfillmentDate = default(DateTime), TypeEnum? type = default(TypeEnum?), decimal quantity = default(decimal), StateEnum? state = default(StateEnum?), DateTime targetDate = default(DateTime), string description = default(string), string trackingNumber = default(string), string carrier = default(string), string fulfillmentSystem = default(string), string externalId = default(string), Revenue revenue = default(Revenue), Dictionary<string, Object> location = default(Dictionary<string, Object>))
+        public Fulfillment(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string orderLineItemId = default(string), string fulfillmentNumber = default(string), DateTime fulfillmentDate = default(DateTime), TypeEnum? type = default(TypeEnum?), decimal quantity = default(decimal), FulfillmentStateEnum? state = default(FulfillmentStateEnum?), DateTime targetDate = default(DateTime), string description = default(string), string trackingNumber = default(string), string carrier = default(string), string fulfillmentSystem = default(string), string externalId = default(string), Revenue revenue = default(Revenue), Dictionary<string, Object> location = default(Dictionary<string, Object>))
         {
             this.revenue = revenue;
             this.custom_fields = customFields;

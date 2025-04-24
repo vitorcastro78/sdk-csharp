@@ -35,7 +35,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the billing document.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum CreditMemoStateEnum
         {
             /// <summary>
             /// Enum Draft for value: draft

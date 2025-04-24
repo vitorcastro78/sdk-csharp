@@ -62,7 +62,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the invoice.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum FulfillmentCreateRequestStateEnum
         {
             /// <summary>
             /// Enum Accepted for value: accepted
@@ -101,7 +101,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the invoice.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public FulfillmentCreateRequestStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FulfillmentCreateRequest" /> class.
         /// </summary>
@@ -125,7 +125,7 @@ namespace Zuora.Model
         /// <param name="state">The status of the invoice..</param>
         /// <param name="trackingNumber">The tracking number of the fulfillment..</param>
         /// <param name="items">Information of all fulfillment items..</param>
-        public FulfillmentCreateRequest(FulfillmentProcessingOption processingOptions = default(FulfillmentProcessingOption), string orderLineItemId = default(string), string carrier = default(string), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string description = default(string), Revenue revenue = default(Revenue), string externalId = default(string), DateTime fulfillmentDate = default(DateTime), string location = default(string), string fulfillmentSystem = default(string), TypeEnum? type = default(TypeEnum?), decimal quantity = default(decimal), StateEnum? state = default(StateEnum?), string trackingNumber = default(string), List<FulfillmentItemCreateRequestForFulfillmentPost> items = default(List<FulfillmentItemCreateRequestForFulfillmentPost>))
+        public FulfillmentCreateRequest(FulfillmentProcessingOption processingOptions = default(FulfillmentProcessingOption), string orderLineItemId = default(string), string carrier = default(string), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string description = default(string), Revenue revenue = default(Revenue), string externalId = default(string), DateTime fulfillmentDate = default(DateTime), string location = default(string), string fulfillmentSystem = default(string), TypeEnum? type = default(TypeEnum?), decimal quantity = default(decimal), FulfillmentCreateRequestStateEnum? state = default(FulfillmentCreateRequestStateEnum?), string trackingNumber = default(string), List<FulfillmentItemCreateRequestForFulfillmentPost> items = default(List<FulfillmentItemCreateRequestForFulfillmentPost>))
         {
             // to ensure "orderLineItemId" is required (not null)
             if (orderLineItemId == null)

@@ -62,7 +62,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The state of an order line item. If you want to generate billing documents for order line items, you must set this field to &#x60;sent_to_billing&#x60;. For invoice preview, you do not need to set this field.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum LineItemStateEnum
         {
             /// <summary>
             /// Enum Pending for value: pending
@@ -101,7 +101,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The state of an order line item. If you want to generate billing documents for order line items, you must set this field to &#x60;sent_to_billing&#x60;. For invoice preview, you do not need to set this field.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public LineItemStateEnum? state { get; set; }
         /// <summary>
         /// The billing rule for the Order Line Item.
         /// </summary>
@@ -170,7 +170,7 @@ namespace Zuora.Model
         /// <param name="listPrice">The extended list price for an order line item, calculated by the formula: listPrice &#x3D; listPricePerUnit * quantity.</param>
         /// <param name="originalSoldToId">The ID of a contact that belongs to the billing account of the order line item. Use this field to assign an existing account as the sold-to contact of an order line item..</param>
         /// <param name="unbilledReceivablesAccount">The accounting code on the Order Line Item object for customers using Zuora Billing - Revenue Integration..</param>
-        public LineItem(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string unitOfMeasure = default(string), decimal unitAmount = default(decimal), DateTime targetDate = default(DateTime), string deferredRevenueAccount = default(string), string description = default(string), Revenue revenue = default(Revenue), decimal discountUnitAmount = default(decimal), decimal discountPercent = default(decimal), CategoryEnum? category = default(CategoryEnum?), StateEnum? state = default(StateEnum?), string type = default(string), string name = default(string), string itemNumber = default(string), decimal listUnitPrice = default(decimal), string productCode = default(string), string priceId = default(string), string purchaseOrderNumber = default(string), decimal quantity = default(decimal), string recognizedRevenueAccount = default(string), string revenueRecognitionRuleName = default(string), string soldToId = default(string), string taxCode = default(string), bool taxInclusive = default(bool), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime), string relatedSubscriptionNumber = default(string), BillingRuleEnum? billingRule = default(BillingRuleEnum?), string total = default(string), string subtotal = default(string), DateTime originalOrderDate = default(DateTime), string accountingCode = default(string), string adjustmentLiabilityAccount = default(string), string adjustmentRevenueAccount = default(string), string discountTotal = default(string), string listPrice = default(string), string originalSoldToId = default(string), string unbilledReceivablesAccount = default(string))
+        public LineItem(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string unitOfMeasure = default(string), decimal unitAmount = default(decimal), DateTime targetDate = default(DateTime), string deferredRevenueAccount = default(string), string description = default(string), Revenue revenue = default(Revenue), decimal discountUnitAmount = default(decimal), decimal discountPercent = default(decimal), CategoryEnum? category = default(CategoryEnum?), LineItemStateEnum? state = default(LineItemStateEnum?), string type = default(string), string name = default(string), string itemNumber = default(string), decimal listUnitPrice = default(decimal), string productCode = default(string), string priceId = default(string), string purchaseOrderNumber = default(string), decimal quantity = default(decimal), string recognizedRevenueAccount = default(string), string revenueRecognitionRuleName = default(string), string soldToId = default(string), string taxCode = default(string), bool taxInclusive = default(bool), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime), string relatedSubscriptionNumber = default(string), BillingRuleEnum? billingRule = default(BillingRuleEnum?), string total = default(string), string subtotal = default(string), DateTime originalOrderDate = default(DateTime), string accountingCode = default(string), string adjustmentLiabilityAccount = default(string), string adjustmentRevenueAccount = default(string), string discountTotal = default(string), string listPrice = default(string), string originalSoldToId = default(string), string unbilledReceivablesAccount = default(string))
         {
             this.revenue = revenue;
             this.custom_fields = customFields;

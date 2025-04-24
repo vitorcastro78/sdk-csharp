@@ -62,7 +62,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the order.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum OrderCreateRequestStateEnum
         {
             /// <summary>
             /// Enum Pending for value: pending
@@ -113,7 +113,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the order.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public OrderCreateRequestStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderCreateRequest" /> class.
         /// </summary>
@@ -129,7 +129,7 @@ namespace Zuora.Model
         /// <param name="processingOptions">processingOptions.</param>
         /// <param name="subscriptions">Based on the intended order action, each item should include specific fields.     For example, to create a new subscription for a new account, you must specify the &#x60;account_data&#x60; and &#x60;subscription_plans&#x60; fields at a minimum..</param>
         /// <param name="state">The status of the order..</param>
-        public OrderCreateRequest(CategoryEnum? category = default(CategoryEnum?), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string description = default(string), string accountNumber = default(string), string accountId = default(string), AccountCreateRequest accountData = default(AccountCreateRequest), DateTime orderDate = default(DateTime), string orderNumber = default(string), List<LineItemCreateRequest> lineItems = default(List<LineItemCreateRequest>), OrdersProcessingOption processingOptions = default(OrdersProcessingOption), List<PostSubscriptionOrderRequest> subscriptions = default(List<PostSubscriptionOrderRequest>), StateEnum? state = default(StateEnum?))
+        public OrderCreateRequest(CategoryEnum? category = default(CategoryEnum?), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string description = default(string), string accountNumber = default(string), string accountId = default(string), AccountCreateRequest accountData = default(AccountCreateRequest), DateTime orderDate = default(DateTime), string orderNumber = default(string), List<LineItemCreateRequest> lineItems = default(List<LineItemCreateRequest>), OrdersProcessingOption processingOptions = default(OrdersProcessingOption), List<PostSubscriptionOrderRequest> subscriptions = default(List<PostSubscriptionOrderRequest>), OrderCreateRequestStateEnum? state = default(OrderCreateRequestStateEnum?))
         {
             this.account_data = accountData;
             this.category = category;

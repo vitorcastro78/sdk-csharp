@@ -35,7 +35,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The type of the additional phone number.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum OtherPhoneTypeEnum
+        public enum OtherPhoneType
         {
             /// <summary>
             /// Enum Work for value: work
@@ -68,7 +68,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The type of the additional phone number.</value>
         [DataMember(Name="other_phone_type", EmitDefaultValue=false)]
-        public OtherPhoneTypeEnum? other_phone_type { get; set; }
+        public OtherPhoneType? other_phone_type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountContactCreateRequest" /> class.
         /// </summary>
@@ -91,7 +91,7 @@ namespace Zuora.Model
         /// <param name="workPhone">Customer work phone..</param>
         /// <param name="otherPhoneType">The type of the additional phone number..</param>
         /// <param name="fax">The contact&#39;s fax number..</param>
-        public AccountContactCreateRequest(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), Address address = default(Address), string firstName = default(string), string homePhone = default(string), string lastName = default(string), string mobilePhone = default(string), string nickname = default(string), string otherPhone = default(string), string email = default(string), string taxRegion = default(string), string workEmail = default(string), string workPhone = default(string), OtherPhoneTypeEnum? otherPhoneType = default(OtherPhoneTypeEnum?), string fax = default(string))
+        public AccountContactCreateRequest(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), Address address = default(Address), string firstName = default(string), string homePhone = default(string), string lastName = default(string), string mobilePhone = default(string), string nickname = default(string), string otherPhone = default(string), string email = default(string), string taxRegion = default(string), string workEmail = default(string), string workPhone = default(string), OtherPhoneType? otherPhoneType = default(OtherPhoneType?), string fax = default(string))
         {
             // to ensure "firstName" is required (not null)
             if (firstName == null)

@@ -35,7 +35,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The type of the payment method. An additional hash is included on the payment method with a name matching this value. It contains additional information specific to the payment method type.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
+        public enum PaymentMethodTypeEnum
         {
             /// <summary>
             /// Enum Paypalexpress for value: paypal_express
@@ -170,7 +170,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The type of the payment method. An additional hash is included on the payment method with a name matching this value. It contains additional information specific to the payment method type.</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? type { get; set; }
+        public PaymentMethodTypeEnum? type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountPaymentMethodRequest" /> class.
         /// </summary>
@@ -199,7 +199,7 @@ namespace Zuora.Model
         /// <param name="auBecsDebit">auBecsDebit.</param>
         /// <param name="nzBecsDebit">nzBecsDebit.</param>
         /// <param name="padDebit">padDebit.</param>
-        public AccountPaymentMethodRequest(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), TypeEnum? type = default(TypeEnum?), string customType = default(string), string accountId = default(string), BillingDetails billingDetails = default(BillingDetails), decimal maximumPaymentAttempts = default(decimal), int paymentRetryInterval = default(int), string deviceSessionId = default(string), string ipAddress = default(string), string bankIdentificationNumber = default(string), Card card = default(Card), PaypalExpressNative paypalExpressNative = default(PaypalExpressNative), PaypalExpress paypalExpress = default(PaypalExpress), PaypalAdaptive paypalAdaptive = default(PaypalAdaptive), SepaDebit sepaDebit = default(SepaDebit), CcRef ccRef = default(CcRef), ApplePay applePay = default(ApplePay), GooglePay googlePay = default(GooglePay), AchDebit achDebit = default(AchDebit), BetalingsDebit betalingsDebit = default(BetalingsDebit), AutogiroDebit autogiroDebit = default(AutogiroDebit), BacsDebit bacsDebit = default(BacsDebit), AuBecsDebit auBecsDebit = default(AuBecsDebit), NzBecsDebit nzBecsDebit = default(NzBecsDebit), PadDebit padDebit = default(PadDebit))
+        public AccountPaymentMethodRequest(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), PaymentMethodTypeEnum? type = default(PaymentMethodTypeEnum?), string customType = default(string), string accountId = default(string), BillingDetails billingDetails = default(BillingDetails), decimal maximumPaymentAttempts = default(decimal), int paymentRetryInterval = default(int), string deviceSessionId = default(string), string ipAddress = default(string), string bankIdentificationNumber = default(string), Card card = default(Card), PaypalExpressNative paypalExpressNative = default(PaypalExpressNative), PaypalExpress paypalExpress = default(PaypalExpress), PaypalAdaptive paypalAdaptive = default(PaypalAdaptive), SepaDebit sepaDebit = default(SepaDebit), CcRef ccRef = default(CcRef), ApplePay applePay = default(ApplePay), GooglePay googlePay = default(GooglePay), AchDebit achDebit = default(AchDebit), BetalingsDebit betalingsDebit = default(BetalingsDebit), AutogiroDebit autogiroDebit = default(AutogiroDebit), BacsDebit bacsDebit = default(BacsDebit), AuBecsDebit auBecsDebit = default(AuBecsDebit), NzBecsDebit nzBecsDebit = default(NzBecsDebit), PadDebit padDebit = default(PadDebit))
         {
             this.ip_address = ipAddress;
             this.custom_fields = customFields;

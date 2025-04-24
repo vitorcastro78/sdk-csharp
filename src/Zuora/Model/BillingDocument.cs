@@ -68,7 +68,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the billing document.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum BillingDocumentStateEnum
         {
             /// <summary>
             /// Enum Draft for value: draft
@@ -101,7 +101,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the billing document.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public BillingDocumentStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingDocument" /> class.
         /// </summary>
@@ -121,7 +121,7 @@ namespace Zuora.Model
         /// <param name="stateTransitions">stateTransitions.</param>
         /// <param name="state">The status of the billing document..</param>
         /// <param name="account">The account that owns the billing document. EXPANDABLE.</param>
-        public BillingDocument(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string accountId = default(string), string accountNumber = default(string), string description = default(string), DateTime dueDate = default(DateTime), DateTime documentDate = default(DateTime), string reasonCode = default(string), string invoiceId = default(string), bool transferToAccounting = default(bool), bool excludeFromAutoApplyRules = default(bool), bool pay = default(bool), TypeEnum? type = default(TypeEnum?), decimal amountRefunded = default(decimal), Object stateTransitions = default(Object), StateEnum? state = default(StateEnum?), Account account = default(Account))
+        public BillingDocument(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string accountId = default(string), string accountNumber = default(string), string description = default(string), DateTime dueDate = default(DateTime), DateTime documentDate = default(DateTime), string reasonCode = default(string), string invoiceId = default(string), bool transferToAccounting = default(bool), bool excludeFromAutoApplyRules = default(bool), bool pay = default(bool), TypeEnum? type = default(TypeEnum?), decimal amountRefunded = default(decimal), Object stateTransitions = default(Object), BillingDocumentStateEnum? state = default(BillingDocumentStateEnum?), Account account = default(Account))
         {
             this.state_transitions = stateTransitions;
             this.account = account;

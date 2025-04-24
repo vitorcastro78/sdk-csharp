@@ -35,7 +35,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the debit memo.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum DebitMemoStateEnum
         {
             /// <summary>
             /// Enum Draft for value: draft
@@ -68,7 +68,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the debit memo.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public DebitMemoStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DebitMemo" /> class.
         /// </summary>
@@ -90,7 +90,7 @@ namespace Zuora.Model
         /// <param name="billToId">ID of the bill-to contact..</param>
         /// <param name="paymentTerms">The name of payment term associated with the invoice..</param>
         /// <param name="billingDocumentSettings">The billing document settings for the customer..</param>
-        public DebitMemo(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string accountId = default(string), string accountNumber = default(string), string description = default(string), DateTime dueDate = default(DateTime), DateTime documentDate = default(DateTime), string reasonCode = default(string), string invoiceId = default(string), bool transferToAccounting = default(bool), bool excludeFromAutoApplyRules = default(bool), bool pay = default(bool), decimal amountRefunded = default(decimal), Object stateTransitions = default(Object), StateEnum? state = default(StateEnum?), Account account = default(Account), string billToId = default(string), string paymentTerms = default(string), FlexibleBillingDocumentSettings billingDocumentSettings = default(FlexibleBillingDocumentSettings))
+        public DebitMemo(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string accountId = default(string), string accountNumber = default(string), string description = default(string), DateTime dueDate = default(DateTime), DateTime documentDate = default(DateTime), string reasonCode = default(string), string invoiceId = default(string), bool transferToAccounting = default(bool), bool excludeFromAutoApplyRules = default(bool), bool pay = default(bool), decimal amountRefunded = default(decimal), Object stateTransitions = default(Object), DebitMemoStateEnum? state = default(DebitMemoStateEnum?), Account account = default(Account), string billToId = default(string), string paymentTerms = default(string), FlexibleBillingDocumentSettings billingDocumentSettings = default(FlexibleBillingDocumentSettings))
         {
             this.state_transitions = stateTransitions;
             this.account = account;

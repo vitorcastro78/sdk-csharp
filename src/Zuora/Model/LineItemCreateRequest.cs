@@ -62,7 +62,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The state of an order line item. If you want to generate billing documents for order line items, you must set this field to &#x60;sent_to_billing&#x60;. For invoice preview, you do not need to set this field.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum LineItemCreateRequestStateEnum
         {
             /// <summary>
             /// Enum Pending for value: pending
@@ -101,7 +101,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The state of an order line item. If you want to generate billing documents for order line items, you must set this field to &#x60;sent_to_billing&#x60;. For invoice preview, you do not need to set this field.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public LineItemCreateRequestStateEnum? state { get; set; }
         /// <summary>
         /// The type of the order line item.
         /// </summary>
@@ -198,7 +198,7 @@ namespace Zuora.Model
         /// <param name="endDate">The date a transaction is completed. The default value of this field is the transaction start date. Also, the value of this field should always equal or be later than the value of the &#x60;start_date&#x60; field..</param>
         /// <param name="relatedSubscriptionNumber">Relates an order line item to a subscription when you create the order line item..</param>
         /// <param name="billingRule">The billing rule for the Order Line Item..</param>
-        public LineItemCreateRequest(string unitOfMeasure = default(string), decimal unitAmount = default(decimal), DateTime targetDate = default(DateTime), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string deferredRevenueAccount = default(string), string description = default(string), Revenue revenue = default(Revenue), decimal discountUnitAmount = default(decimal), decimal discountPercent = default(decimal), CategoryEnum? category = default(CategoryEnum?), StateEnum? state = default(StateEnum?), TypeEnum type = default(TypeEnum), string name = default(string), string itemNumber = default(string), decimal listUnitPrice = default(decimal), string productCode = default(string), string priceId = default(string), string purchaseOrderNumber = default(string), decimal quantity = default(decimal), string recognizedRevenueAccount = default(string), string revenueRecognitionRuleName = default(string), string soldToId = default(string), string taxCode = default(string), bool taxInclusive = default(bool), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime), string relatedSubscriptionNumber = default(string), BillingRuleEnum? billingRule = default(BillingRuleEnum?))
+        public LineItemCreateRequest(string unitOfMeasure = default(string), decimal unitAmount = default(decimal), DateTime targetDate = default(DateTime), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string deferredRevenueAccount = default(string), string description = default(string), Revenue revenue = default(Revenue), decimal discountUnitAmount = default(decimal), decimal discountPercent = default(decimal), CategoryEnum? category = default(CategoryEnum?), LineItemCreateRequestStateEnum? state = default(LineItemCreateRequestStateEnum?), TypeEnum type = default(TypeEnum), string name = default(string), string itemNumber = default(string), decimal listUnitPrice = default(decimal), string productCode = default(string), string priceId = default(string), string purchaseOrderNumber = default(string), decimal quantity = default(decimal), string recognizedRevenueAccount = default(string), string revenueRecognitionRuleName = default(string), string soldToId = default(string), string taxCode = default(string), bool taxInclusive = default(bool), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime), string relatedSubscriptionNumber = default(string), BillingRuleEnum? billingRule = default(BillingRuleEnum?))
         {
             this.revenue = revenue;
             // to ensure "type" is required (not null)
@@ -261,7 +261,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The unit amount of the price. Specify this field if you want to override the original price with a per-unit price.</value>
         [DataMember(Name="unit_amount", EmitDefaultValue=false)]
-        public decimal unit_amount { get; set; }
+        public decimal? unit_amount { get; set; }
 
         /// <summary>
         /// The target date for the order line item to be picked up by bill run for billing.
@@ -269,7 +269,7 @@ namespace Zuora.Model
         /// <value>The target date for the order line item to be picked up by bill run for billing.</value>
         [DataMember(Name="target_date", EmitDefaultValue=false)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
-        public DateTime target_date { get; set; }
+        public DateTime? target_date { get; set; }
 
         /// <summary>
         /// Set of user-defined fields associated with this object. Useful for storing additional information about the object in a structured format.
@@ -303,14 +303,14 @@ namespace Zuora.Model
         /// </summary>
         /// <value>Discount amount. Specify this field if you offer an amount-based discount.</value>
         [DataMember(Name="discount_unit_amount", EmitDefaultValue=false)]
-        public decimal discount_unit_amount { get; set; }
+        public decimal? discount_unit_amount { get; set; }
 
         /// <summary>
         /// Discount percent. Specify this field if you offer a percentage-based discount.
         /// </summary>
         /// <value>Discount percent. Specify this field if you offer a percentage-based discount.</value>
         [DataMember(Name="discount_percent", EmitDefaultValue=false)]
-        public decimal discount_percent { get; set; }
+        public decimal? discount_percent { get; set; }
 
 
 

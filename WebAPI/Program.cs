@@ -57,16 +57,16 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // Configuração do CORS
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowSpecificOrigins", options =>
-    {
-        options.WithOrigins(builder.Configuration.GetValue<string[]>("Cors:AllowedOrigins"))
-               .WithMethods(builder.Configuration.GetValue<string[]>("Cors:AllowedMethods"))
-               .WithHeaders(builder.Configuration.GetValue<string[]>("Cors:AllowedHeaders"))
-               .AllowCredentials();
-    });
-});
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowSpecificOrigins", options =>
+//    {
+//        options.WithOrigins(builder.Configuration.GetValue<string[]>("Cors:AllowedOrigins"))
+//               .WithMethods(builder.Configuration.GetValue<string[]>("Cors:AllowedMethods"))
+//               .WithHeaders(builder.Configuration.GetValue<string[]>("Cors:AllowedHeaders"))
+//               .AllowCredentials();
+//    });
+//});
 
 // Configuração da autenticação JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

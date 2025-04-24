@@ -62,7 +62,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the order.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum OrderStateEnum
         {
             /// <summary>
             /// Enum Pending for value: pending
@@ -113,7 +113,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the order.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public OrderStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
@@ -127,7 +127,7 @@ namespace Zuora.Model
         /// <param name="lineItems">lineItems.</param>
         /// <param name="subscriptions">Based on the intended order action, each item should include specific fields.     For example, to create a new subscription for a new account, you must specify the &#x60;account_data&#x60; and &#x60;subscription_plans&#x60; fields at a minimum..</param>
         /// <param name="state">The status of the order..</param>
-        public Order(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string orderNumber = default(string), DateTime orderDate = default(DateTime), string description = default(string), CategoryEnum? category = default(CategoryEnum?), string accountId = default(string), Account account = default(Account), LineItemListResponse lineItems = default(LineItemListResponse), List<PostSubscriptionOrderResponse> subscriptions = default(List<PostSubscriptionOrderResponse>), StateEnum? state = default(StateEnum?))
+        public Order(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string orderNumber = default(string), DateTime orderDate = default(DateTime), string description = default(string), CategoryEnum? category = default(CategoryEnum?), string accountId = default(string), Account account = default(Account), LineItemListResponse lineItems = default(LineItemListResponse), List<PostSubscriptionOrderResponse> subscriptions = default(List<PostSubscriptionOrderResponse>), OrderStateEnum? state = default(OrderStateEnum?))
         {
             this.account = account;
             this.custom_fields = customFields;

@@ -35,7 +35,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the invoice.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum InvoiceStateEnum
         {
             /// <summary>
             /// Enum Draft for value: draft
@@ -68,7 +68,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the invoice.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public InvoiceStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Invoice" /> class.
         /// </summary>
@@ -87,7 +87,7 @@ namespace Zuora.Model
         /// <param name="paymentTerms">The name of payment term associated with the invoice..</param>
         /// <param name="billingDocumentSettings">The billing document settings for the customer..</param>
         /// <param name="soldToId">ID of the sold-to contact..</param>
-        public Invoice(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string accountId = default(string), string accountNumber = default(string), string description = default(string), DateTime dueDate = default(DateTime), DateTime documentDate = default(DateTime), bool transferToAccounting = default(bool), bool pay = default(bool), Object stateTransitions = default(Object), StateEnum? state = default(StateEnum?), Account account = default(Account), string billToId = default(string), string paymentTerms = default(string), FlexibleBillingDocumentSettings billingDocumentSettings = default(FlexibleBillingDocumentSettings), string soldToId = default(string))
+        public Invoice(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string accountId = default(string), string accountNumber = default(string), string description = default(string), DateTime dueDate = default(DateTime), DateTime documentDate = default(DateTime), bool transferToAccounting = default(bool), bool pay = default(bool), Object stateTransitions = default(Object), InvoiceStateEnum? state = default(InvoiceStateEnum?), Account account = default(Account), string billToId = default(string), string paymentTerms = default(string), FlexibleBillingDocumentSettings billingDocumentSettings = default(FlexibleBillingDocumentSettings), string soldToId = default(string))
         {
             this.state_transitions = stateTransitions;
             this.account = account;

@@ -101,7 +101,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The state of the bill run preview.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum BillRunPreviewStateEnum
         {
             /// <summary>
             /// Enum Pending for value: pending
@@ -140,7 +140,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The state of the bill run preview.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public BillRunPreviewStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BillRunPreview" /> class.
         /// </summary>
@@ -157,7 +157,7 @@ namespace Zuora.Model
         /// <param name="state">The state of the bill run preview..</param>
         /// <param name="numberOfAccountsSucceeded">The number of the customer accounts whose bill run preview job succeeded..</param>
         /// <param name="numberOfAccounts">The number of the customer accounts included in the bill run preview job..</param>
-        public BillRunPreview(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), AssumeRenewalEnum? assumeRenewal = default(AssumeRenewalEnum?), List<string> batches = default(List<string>), List<ChargesExcludedEnum> chargesExcluded = default(List<ChargesExcludedEnum>), bool includeDraftItems = default(bool), bool includeEvergreenSubscriptions = default(bool), DateTime targetDate = default(DateTime), BillRunPreviewStateTransitions stateTransitions = default(BillRunPreviewStateTransitions), BillRunPreviewFile file = default(BillRunPreviewFile), string billingPreviewRunNumber = default(string), StateEnum? state = default(StateEnum?), decimal numberOfAccountsSucceeded = default(decimal), decimal numberOfAccounts = default(decimal))
+        public BillRunPreview(Dictionary<string, Object> customFields = default(Dictionary<string, Object>), AssumeRenewalEnum? assumeRenewal = default(AssumeRenewalEnum?), List<string> batches = default(List<string>), List<ChargesExcludedEnum> chargesExcluded = default(List<ChargesExcludedEnum>), bool includeDraftItems = default(bool), bool includeEvergreenSubscriptions = default(bool), DateTime targetDate = default(DateTime), BillRunPreviewStateTransitions stateTransitions = default(BillRunPreviewStateTransitions), BillRunPreviewFile file = default(BillRunPreviewFile), string billingPreviewRunNumber = default(string), BillRunPreviewStateEnum? state = default(BillRunPreviewStateEnum?), decimal numberOfAccountsSucceeded = default(decimal), decimal numberOfAccounts = default(decimal))
         {
             this.custom_fields = customFields;
             this.assume_renewal = assumeRenewal;

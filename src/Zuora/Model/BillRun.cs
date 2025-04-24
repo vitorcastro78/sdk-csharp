@@ -35,7 +35,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>Status of the bill run.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum BillRunStateEnum
         {
             /// <summary>
             /// Enum Processed for value: processed
@@ -80,7 +80,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>Status of the bill run.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public BillRunStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BillRun" /> class.
         /// </summary>
@@ -105,7 +105,7 @@ namespace Zuora.Model
         /// <param name="invoicesGenerated">Number of invoices generated from this bill run..</param>
         /// <param name="creditMemosGenerated">Number of credit memos generated from this bill run..</param>
         /// <param name="name">The name of the bill run..</param>
-        public BillRun(string id = default(string), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string accountId = default(string), bool email = default(bool), bool post = default(bool), bool renew = default(bool), string dayOfMonth = default(string), string billRunNumber = default(string), DateTime billRunTime = default(DateTime), DateTime invoiceDate = default(DateTime), DateTime targetDate = default(DateTime), StateEnum? state = default(StateEnum?), string batches = default(string), string chargesExcluded = default(string), bool emailZeroAmountInvoices = default(bool), bool invoicesSent = default(bool), DateTime lastInvoiceSentTime = default(DateTime), int accountsProcessed = default(int), int invoicesGenerated = default(int), int creditMemosGenerated = default(int), string name = default(string))
+        public BillRun(string id = default(string), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string accountId = default(string), bool email = default(bool), bool post = default(bool), bool renew = default(bool), string dayOfMonth = default(string), string billRunNumber = default(string), DateTime billRunTime = default(DateTime), DateTime invoiceDate = default(DateTime), DateTime targetDate = default(DateTime), BillRunStateEnum? state = default(BillRunStateEnum?), string batches = default(string), string chargesExcluded = default(string), bool emailZeroAmountInvoices = default(bool), bool invoicesSent = default(bool), DateTime lastInvoiceSentTime = default(DateTime), int accountsProcessed = default(int), int invoicesGenerated = default(int), int creditMemosGenerated = default(int), string name = default(string))
         {
             this.id = id;
             this.custom_fields = customFields;

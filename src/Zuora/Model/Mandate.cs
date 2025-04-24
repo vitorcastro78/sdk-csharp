@@ -35,7 +35,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the mandate, which indicates whether it can be used to initiate a payment.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum MandateStateEnum
         {
             /// <summary>
             /// Enum Active for value: active
@@ -68,7 +68,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The status of the mandate, which indicates whether it can be used to initiate a payment.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public MandateStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Mandate" /> class.
         /// </summary>

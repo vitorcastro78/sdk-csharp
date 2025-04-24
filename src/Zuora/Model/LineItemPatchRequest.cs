@@ -122,7 +122,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The state of an order line item. If you want to generate billing documents for order line items, you must set this field to &#x60;sent_to_billing&#x60;. For invoice preview, you do not need to set this field.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
+        public enum LineItemPatchRequestStateEnum
         {
             /// <summary>
             /// Enum Accepted for value: accepted
@@ -161,7 +161,7 @@ namespace Zuora.Model
         /// </summary>
         /// <value>The state of an order line item. If you want to generate billing documents for order line items, you must set this field to &#x60;sent_to_billing&#x60;. For invoice preview, you do not need to set this field.</value>
         [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? state { get; set; }
+        public LineItemPatchRequestStateEnum? state { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LineItemPatchRequest" /> class.
         /// </summary>
@@ -193,7 +193,7 @@ namespace Zuora.Model
         /// <param name="itemNumber">Human-readable identifier of the order item. It can be user-supplied..</param>
         /// <param name="startDate">The date a transaction starts. The default value of this field is the order date..</param>
         /// <param name="endDate">The date the order line item transitions to complete..</param>
-        public LineItemPatchRequest(OrderLineItemRevenue revenue = default(OrderLineItemRevenue), string unitOfMeasure = default(string), string accountingCode = default(string), string adjustmentLiabilityAccount = default(string), decimal unitAmount = default(decimal), DateTime targetDate = default(DateTime), BillingRuleEnum? billingRule = default(BillingRuleEnum?), string contractAssetAccount = default(string), string contractLiabilityAccount = default(string), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string description = default(string), decimal discountUnitAmount = default(decimal), decimal discountPercent = default(decimal), CategoryEnum? category = default(CategoryEnum?), string name = default(string), TypeEnum? type = default(TypeEnum?), decimal listUnitPrice = default(decimal), string productCode = default(string), string purchaseOrderNumber = default(string), decimal quantity = default(decimal), string relatedSubscriptionNumber = default(string), string soldToId = default(string), string taxCode = default(string), string unbilledReceivablesAccount = default(string), StateEnum? state = default(StateEnum?), string itemNumber = default(string), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime))
+        public LineItemPatchRequest(OrderLineItemRevenue revenue = default(OrderLineItemRevenue), string unitOfMeasure = default(string), string accountingCode = default(string), string adjustmentLiabilityAccount = default(string), decimal unitAmount = default(decimal), DateTime targetDate = default(DateTime), BillingRuleEnum? billingRule = default(BillingRuleEnum?), string contractAssetAccount = default(string), string contractLiabilityAccount = default(string), Dictionary<string, Object> customFields = default(Dictionary<string, Object>), string description = default(string), decimal discountUnitAmount = default(decimal), decimal discountPercent = default(decimal), CategoryEnum? category = default(CategoryEnum?), string name = default(string), TypeEnum? type = default(TypeEnum?), decimal listUnitPrice = default(decimal), string productCode = default(string), string purchaseOrderNumber = default(string), decimal quantity = default(decimal), string relatedSubscriptionNumber = default(string), string soldToId = default(string), string taxCode = default(string), string unbilledReceivablesAccount = default(string), LineItemPatchRequestStateEnum? state = default(LineItemPatchRequestStateEnum?), string itemNumber = default(string), DateTime startDate = default(DateTime), DateTime endDate = default(DateTime))
         {
             this.revenue = revenue;
             this.unit_of_measure = unitOfMeasure;
