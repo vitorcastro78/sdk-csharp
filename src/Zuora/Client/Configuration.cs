@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using RestSharp;
 
 namespace Zuora.Client
 {
@@ -119,9 +120,6 @@ namespace Zuora.Client
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
-
-            // Setting Timeout has side effects (forces ApiClient creation).
-            Timeout = 100000;
         }
 
         /// <summary>
@@ -233,7 +231,7 @@ namespace Zuora.Client
                 _basePath = value;
                 // pass-through to ApiClient if it's set.
                 if(_apiClient != null) {
-                    _apiClient.RestClient.BaseUrl = new Uri(_basePath);
+                    
                 }
             }
         }
@@ -249,8 +247,8 @@ namespace Zuora.Client
         public virtual int Timeout
         {
             
-            get { return ApiClient.RestClient.Timeout; }
-            set { ApiClient.RestClient.Timeout = value; }
+            get { return 100000; }
+            
         }
 
         /// <summary>
